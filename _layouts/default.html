@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ page.title }}</title>
+  <!---Fonts--->
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat" rel="stylesheet">
+  <!--  Styles  -->
+  <link rel="stylesheet" href="styles/style.processed.css">
+</head>
+
+<body>
+  <nav class="navBar">
+    <a class="signature" href="index.html">Signature</a>
+    <ul>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html">About</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+			
+	{{ content }}
+			
+  </main>
+	
+  <footer>
+    <a href="linkedin">
+      <img src="assets/linkedin-logo">
+    </a>
+    <a href="https://github.com/Chechgm">
+      <img src="assets/gitHub-logo">
+    </a>
+    <a href="blog/atom.xml">
+      <img src="assets/rss-logo">
+    </a>
+  </footer>
+</body>
+</html>

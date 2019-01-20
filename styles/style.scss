@@ -1,0 +1,134 @@
+// Main parts of the webpage
+body {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff;
+  margin: 0px;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Inconsolata", monospace;
+}
+
+// Navigation bar (uses flexbox)
+.navBar {
+  display: flex;
+  height: 30px;
+  line-height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #191919;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.navBar .signature {
+  display: inline-block;
+  text-align: center;
+  padding-left: 5vw;
+}
+
+.navBar ul {
+  list-style: none;
+  padding-right: 4vw;
+  margin: 0;
+}
+.navBar li {
+  display: inline;
+}
+
+.navBar li a {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.text {
+  padding: 0px 20vw 0px 20vw;
+}
+
+/* 
+About specifics
+*/
+
+.img-holder {
+  //margin: 0 auto;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+#portrait {
+  border-radius: 50%;
+}
+
+/*
+Blog specifics
+*/
+
+// Blog grid, uses grid
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 50px 30px;
+  margin: 20px 20px 20px 20px;
+  justify-items: center;
+}
+
+.square {
+  text-align: center;
+  width: 300px;
+  height: 350px;
+  margin: 5px 5px 5px 5px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 2px rgba(25, 25, 25, 0.2);
+  border-radius: 6px;
+}
+
+.square:hover {
+  cursor: pointer;
+}
+
+// Blog images
+.blogImg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.blogImg-wrap {
+  border-top-right-radius: 6.9px;
+  border-top-left-radius: 6.9px;
+  background-color: black;
+}
+
+.blogImg:hover {
+  opacity: 0.9;
+}
+
+.blogLink {
+  color: #000000;
+  text-decoration: none;
+}
+
+/*
+Blog View specifics
+*/
+.blogViewGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px 20px 40px 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.summary {
+  font-style: italic;
+  padding: 0 10vw 0 10vw;
+}

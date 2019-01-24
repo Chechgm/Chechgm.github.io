@@ -1,38 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>{{ page.title }}</title>
-  <!---Fonts--->
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat" rel="stylesheet">
-  <!--  Styles  -->
-  <link rel="stylesheet" href="styles/style.processed.css">
-</head>
+---
+layout: default
+---
 
-<body>
-  <nav class="navBar">
-    <a class="signature" href="index.html">Signature</a>
-    <ul>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="index.html">About</a></li>
-    </ul>
-  </nav>
-  
   <main>
-			
-	{{ content }}
-			
+    <div class=blogViewGrid>
+      <div>
+        <h1> {{ post.title }} </h1>
+        <p class="text">
+          {{ post.date }}
+        </p>
+        <p class="summary">
+          {{ post.summary }}
+        </p>
+      </div>
+      <img class="blogImg" src="{{ post.img_link }}" alt="">
+    </div>
+
+    <div class="text-holder">
+      {{ post.content }}
+    </div>
   </main>
-	
-  <footer>
-    <a href="linkedin">
-      <img src="assets/linkedin-logo">
-    </a>
-    <a href="https://github.com/Chechgm">
-      <img src="assets/git.png">
-    </a>
-    <a href="blog/atom.xml">
-      <img src="assets/rss-logo">
-    </a>
-  </footer>
-</body>
-</html>

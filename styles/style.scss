@@ -12,8 +12,10 @@ h1 {
 }
 
 icon {
-
+  width: 20px;
+  height: auto;
 }
+
 // Navigation bar (uses flexbox)
 .navBar {
   display: flex;

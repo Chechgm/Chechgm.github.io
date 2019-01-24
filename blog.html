@@ -1,72 +1,22 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <!---Fonts--->
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat" rel="stylesheet">
-  <!--  Styles  -->
-  <link rel="stylesheet" href="styles/style.processed.css">
-  <!---Mathematics support--->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-  <!---Logos--->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <!---JQuery--->
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-
+---
+layout: default
+---
 <main>
 
   <body>
-
-    <nav class="navBar">
-      <a class="signature" href="index.html">Signature</a>
-      <ul>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="index.html">About</a></li>
-      </ul>
-    </nav>
-
     <div class="blogGrid">
-      <a class="blogLink" href="/blogView.html">
+      {% for post in site.posts %}
+      <a class="blogLink" href="{{ post.url }}">
         <div class="square">
           <div class="blogImg-wrap">
-            <img class="blogImg" src="https://rmt-files.saowen.com/rmt_tk/img1/AzQNfq2.png" alt="">
+            <img class="blogImg" src="{{ post.img_link }}" alt="">
           </div>
-          <p>Normalizing flows</p>
+          <p>{{ post.title }}</p>
         </div>
       </a>
-
-      <a class="blogLink" href="/blogView.html">
-        <div class="square">
-
-          <div class="blogImg-wrap">
-            <img class="blogImg" src="https://www.researchgate.net/profile/Carl_Doersch/publication/304163568/figure/fig4/AS:667035197521927@1536044992692/Samples-from-a-VAE-trained-on-MNIST_Q320.jpg" alt="">
-          </div>
-          <p>VAE samples</p>
-        </div>
-      </a>
-
-      <a class="blogLink" href="/blogView.html">
-        <div class="square">
-          <div class="blogImg-wrap">
-            <img class="blogImg" src="https://rmt-files.saowen.com/rmt_tk/img1/AzQNfq2.png" alt="">
-          </div>
-          <p>Normalizing flows</p>
-        </div>
-      </a>
-
-      <a class="blogLink" href="/blogView.html">
-        <div class="square">
-
-          <div class="blogImg-wrap">
-            <img class="blogImg" src="https://www.researchgate.net/profile/Carl_Doersch/publication/304163568/figure/fig4/AS:667035197521927@1536044992692/Samples-from-a-VAE-trained-on-MNIST_Q320.jpg" alt="">
-          </div>
-          <p>VAE samples</p>
-        </div>
-      </a>
-
+      {% endfor %}
     </div>
+  </body>
 </main>
-</body>
 
 </html>

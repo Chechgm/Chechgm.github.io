@@ -61,13 +61,14 @@ About specifics
 
 .portrait-holder {
   margin-bottom: 20px;
+  border-radius: 50%;
   width: 320px;
-  height: auto;
+  height: 320px;
   text-align: center;
+  overflow: hidden;
 }
 
 .portrait-holder img {
-  border-radius: 50%;
   max-width: 100%;
   height: auto;
 }

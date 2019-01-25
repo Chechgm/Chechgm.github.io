@@ -3,19 +3,23 @@ layout: default
 ---
 
 <body>
+  
   <div class="blogGrid">
     {% for post in site.posts %}
-    <a class="blogLink" href="{{ post.url | prepend: "_posts" }}">
+    <a class="blogLink" href="{{ post.url }}">
       <div class="square">
+        
         <div class="blogImg-wrap">
           <img class="blogImg" src="{{ post.img_link }}" alt="">
         </div>
-        <p>{{ post.url | relative_url }}
-        {{ post.url | escape }}
-        {{ post.url | prepend: "_posts/" }}
-        </p> <!---{{ post.title }}--->
+        
+        <p>
+        {{ post.title }}
+        </p> 
       </div>
-      </a>
-      {% endfor %}
+      
+    </a>
+    {% endfor %}
   </div>
+
 </body>

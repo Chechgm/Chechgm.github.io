@@ -59,14 +59,14 @@ h1 {
 About specifics
 */
 
-.img-holder {
+.portrait-holder {
   margin-bottom: 20px;
   width: 320px;
   height: auto;
   text-align: center;
 }
 
-#portrait {
+.portrait-holder img {
   border-radius: 50%;
   max-width: 100%;
   height: auto;

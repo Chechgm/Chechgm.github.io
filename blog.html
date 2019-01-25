@@ -10,7 +10,10 @@ layout: default
         <div class="blogImg-wrap">
           <img class="blogImg" src="{{ post.img_link }}" alt="">
         </div>
-        <p>{{ post.title }}</p>
+        <p>{{ post.url | relative_url }}
+        {{ post.url | escape }}
+        {{ post.url | prepend: "_posts/" }}
+        </p> <!---{{ post.title }}--->
       </div>
       </a>
       {% endfor %}

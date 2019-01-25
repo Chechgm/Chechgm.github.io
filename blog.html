@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<body>
+  <div class="blogGrid">
+    {% for post in site.posts %}
+    <a class="blogLink" href="{{ site.baseurl }}{{ post.url }}">
+      <div class="square">
+        <div class="blogImg-wrap">
+          <img class="blogImg" src="{{ post.img_link }}" alt="">
+        </div>
+        <p>{{ post.title }}</p>
+      </div>
+      </a>
+      {% endfor %}
+  </div>
+</body>

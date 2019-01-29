@@ -1,32 +1,20 @@
 ---
 layout: default
 ---
-<head>
-  <!---Potentially change for links--->
-  <title>{{ page.title }}</title>
-  <!---Fonts--->
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat" rel="stylesheet">
-  <!--  Styles  -->
-  <link rel="stylesheet" href="styles/style.processed.css">
-</head>
-
-<div class=blogViewGrid>
+<div class="blogViewGrid">
   <div>
-    <h1> {{ post.title }} </h1>
+    <h1> {{ page.title }} </h1>
       <p class="text">
-        {{ post.date }}
+        {{ page.fecha }}
       </p>
       <p class="summary">
-          {{ post.excerpt }}
+        {{ page.excerpt }}
       </p>
   </div>
-  
-  </div>
-    <img class="blogImg" src="{{ post.img_link }}" alt="">
-  </div>
 
-   <div class="text-holder">
-    {{ content }}
-   </div>
+  <img class="blogImg" src={{ page.img_link }} alt="" />
+</div>
 
+<div class="text-holder">
+  {{ page.content }}
 </div>

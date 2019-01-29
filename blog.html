@@ -3,21 +3,21 @@ layout: default
 ---
 
 <body>
-  
+
   <div class="blogGrid">
     {% for post in site.posts %}
-    <a class="blogLink" href="{{ post.url }}">
+    <a class="blogLink" href="{{ post.url | relative_url }}">
       <div class="square">
-        
+
         <div class="blogImg-wrap">
-          <img class="blogImg" src="{{ post.img_link }}" alt="">
+          <img class="blogImg" src="{{ post.img_link }}" alt="" />
         </div>
-        
+
         <p>
         {{ post.title }}
-        </p> 
+        </p>
       </div>
-      
+
     </a>
     {% endfor %}
   </div>

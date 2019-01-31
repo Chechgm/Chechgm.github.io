@@ -1,3 +1,6 @@
+/*
+Main parts of the webpage
+*/
 body {
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -10,8 +13,16 @@ h1 {
   font-family: "Inconsolata", monospace;
 }
 
+a {
+    text-decoration: none;
+}
+
 .text-holder {
   padding: 0px 20vw 0px 20vw;
+}
+
+.text-holder a{
+  color: #85929E;
 }
 
 .icon {
@@ -19,8 +30,13 @@ h1 {
   height: auto;
 }
 
+footer {
+  bottom: 0px; /* added */
+  width: 100%; /* added */
+}
+
 /*
-Navigation Bar
+Navigation bar (uses flexbox)
 */
 
 .navBar {
@@ -55,7 +71,10 @@ Navigation Bar
   text-align: center;
   padding: 14px 16px;
   color: #FFFFFF;
-  text-decoration: none;
+}
+
+.navBar li a:focus {
+  outline: none;
 }
 
 /*
@@ -78,6 +97,11 @@ About specifics
 /*
 Blog specifics
 */
+
+/*
+Blog grid, uses grid
+*/
+
 .blogGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -99,6 +123,10 @@ Blog specifics
 .square:hover {
   cursor: pointer;
 }
+
+/*
+Blog images
+*/
 
 .blogImg {
   display: block;

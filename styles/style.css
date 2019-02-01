@@ -77,6 +77,11 @@ Navigation bar (uses flexbox)
   outline: none;
 }
 
+.signature {
+  height: 30px;
+  width: auto;
+}
+
 /*
 About specifics
 */

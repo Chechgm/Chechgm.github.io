@@ -3,7 +3,5 @@ name: "Sergio's personal blog"
 author: Sergio Garrido
 description: Learning notes and research.
 profile_url: "http://chechgm.github.io"
-
-
-# Build settings
-excerpt_separator: <!--more-->
+plugins:
+  - jekyll-feed

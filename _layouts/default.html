@@ -5,8 +5,12 @@
   <title>{{ page.title }}</title>
   <!---Fonts--->
   <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat" rel="stylesheet">
-  <!--  Styles  -->
+  <!---  Styles  --->
   <link rel="stylesheet" href="{{site.baseurl}}/styles/style.css">
+  <!--- RSS feed meta --->
+  {% feed_meta %}
+  <!--- SEO tags --->
+  {% seo %}
 </head>
 
 

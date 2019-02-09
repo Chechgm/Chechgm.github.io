@@ -18,6 +18,7 @@ a {
 }
 
 .text-holder {
+  text-align: left;
   padding: 0px 20vw 0px 20vw;
 }
 
@@ -135,12 +136,14 @@ Blog images
 */
 
 .blogImg {
+  background-color: white;
   display: block;
-  max-width: 100%;
-  height: auto;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
   transition: opacity 0.3s ease-in-out;
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
 }
 
 .blogImg-wrap {

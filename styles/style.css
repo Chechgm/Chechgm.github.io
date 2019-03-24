@@ -4,7 +4,7 @@ Main parts of the webpage
 body {
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  background-color: #ffffff;
+  background-color: #F7F7F7;
   margin: 0px;
 }
 
@@ -23,7 +23,7 @@ a {
 }
 
 .text-holder a{
-  color: #85929E;
+  color: #2A2A2A;
 }
 
 .icon {
@@ -46,9 +46,13 @@ Navigation bar (uses flexbox)
   line-height: 50px;
   justify-content: space-between;
   align-items: center;
-  background-color: #191919;
+  background-color: white;
   padding: 10px;
   margin-bottom: 40px;
+}
+
+.navbar a {
+  color: #2A2A2A;
 }
 
 .navBar .signature {
@@ -61,6 +65,9 @@ Navigation bar (uses flexbox)
   list-style: none;
   padding-right: 4vw;
   margin: 0;
+  display: flex;
+  align-items: center;
+  height: 50px;
 }
 
 .navBar li {
@@ -70,8 +77,23 @@ Navigation bar (uses flexbox)
 .navBar li a {
   display: inline-block;
   text-align: center;
-  padding: 14px 16px;
-  color: #FFFFFF;
+  /* padding: 14px 16px; */
+  color: #2A2A2A;
+}
+
+.navBar li a {
+  padding: 0px 30px 0px 0px;
+}
+
+.navBar .navbar-icons{
+  display: flex;
+  flex-direction: row;
+}
+
+.navBar .navbar-icons li a {
+  display: flex;
+  align-items: center;
+  padding: 0px 10px 0px 0px;
 }
 
 .navBar li a:focus {
@@ -157,7 +179,7 @@ Blog images
 }
 
 .blogLink {
-  color: #000000;
+  color: #2A2A2A;
   text-decoration: none;
 }
 

@@ -5,3 +5,5 @@ description: Learning notes and research.
 profile_url: "http://chechgm.github.io"
 plugins:
   - jekyll-feed
+scholar:
+  source: .

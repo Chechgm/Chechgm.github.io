@@ -2,10 +2,9 @@
 layout: post
 title:  Study plan
 date: 08-02-2019
-img_link: /assets/golden_ratio.png
+img_link: /assets/1_golden_ratio.png
 excerpt: This is a short study plan I have created (and studied with) for some years now. Even though I am interested in other subjects, it is heavily biased to maths and machine learning courses.
 ---
-# Study plan
 
 I am a man of many interests. I try to continuously learn about a very broad range of subjects. Nowadays, with internet access, people have the resources to learn virtually anything they want from the sources they want. Because of that, I work on a study plan that I created with the help from experts in different areas. The study plan includes courses at universities, online courses and books I want to read on a particular subject. Links will be provided when available for the interested reader to follow them. Unfortunately, I am not going to include my literary list in here (otherwise the list would be too long ;) ). As a disclaimer, I want to say that many of the subsections I have in here overlap with each other, some of the math's tracks are closely related to each other and some of the books I read for Machine Learning are already useful for my research.
 
@@ -64,7 +63,7 @@ Even though you can consider econometrics as a branch of Machine Learning, I off
 ### Books
 * [x] [Winn and Bishop. Model-based machine learning book. Early access](http://mbmlbook.com/)  
 * [x] [Nielsen, M., 2015. Neural Networks and Deep Learning. Determination Press.](http://neuralnetworksanddeeplearning.com/)
-* [on-going][Ian Goodfellow, Yoshua Bengio, and Aaron Courville, 2016. Deep learning. MIT Press.](http://www.deeplearningbook.org/)  
+* [x] [Ian Goodfellow, Yoshua Bengio, and Aaron Courville, 2016. Deep learning. MIT Press.](http://www.deeplearningbook.org/)  
 * [ ] Richard S. Sutton and Andrew G. Barto., 2017. Reinforcement Learning: An Introduction. MIT Press, Cambridge, MA.
 * [ ] [Rasmussen and Williams, 2006. Gaussian Processes for Machine Learning. MIT Press](http://www.gaussianprocess.org/gpml/chapters/)
 * [ ] [Vincent François-Lavet, Peter Henderson, Riashat Islam, Marc G. Bellemare and Joelle Pineau,  2018. An Introduction to Deep Reinforcement Learning, Foundations and Trends in Machine Learning: Vol. 11, No. 3-4.](https://arxiv.org/pdf/1811.12560v2.pdf)
@@ -82,7 +81,7 @@ Besides my interest in maths and machine learning, I am interested in other thin
 ### Languages:
 1. [x] Duolingo French
 2. [x] Duolingo Hebrew
-3. [on-going] Duolingo Danish
+3. [x] Duolingo Danish
 4. [ ] Duolingo German
 
 ### Music:
@@ -91,10 +90,11 @@ Besides my interest in maths and machine learning, I am interested in other thin
 
 ### Physics:
 1. [ ] [Quantum Mechanics (MIT 8.04)](https://www.youtube.com/watch?v=lZ3bPUKo5zc&list=PLUl4u3cNGP61-9PEhRognw5vryrSEVLPr)
-2. Mastering Quantum Mechanics (MIT, edx)
+2. Mastering Quantum Mechanics (MIT 8.05, edx)
 * [ ] [Wave Mechanics](https://courses.edx.org/courses/course-v1:MITx+8.05.1x+1T2016/course/)
 * [ ] [Quantum Dynamics](https://courses.edx.org/courses/course-v1:MITx+8.05.2x+1T2016/course/)
 * [ ] [Entanglement and Angular Momentum](https://courses.edx.org/courses/course-v1:MITx+8.05.3x+1T2016/course/)
+3. [ ] [Applications of Quantum Mechanics (MIT 8.06, edx)](https://www.edx.org/course/applications-of-quantum-mechanics)
 
 ### Architecture/Urbanism:
 1. [ ] [Theory of city form (MIT, YouTube)](https://www.youtube.com/watch?v=k2_wuThLG6o&list=PLUl4u3cNGP63hVXZEMszpS_CWvUFsURr6)

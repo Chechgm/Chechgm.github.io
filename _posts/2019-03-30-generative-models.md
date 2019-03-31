@@ -3,7 +3,7 @@ layout: post
 title:  Generative models
 date: 30-03-2019
 img_link: /assets/2_plated_graph.png
-excerpt: This post introduces some of the basic concepts necessary for the following posts and the research I work on. The aim of the post is to introduce you to generative modeling and some of its terminology. Future posts will deepen on how to learn and use this models.
+excerpt: This post introduces some of the basic concepts necessary for the following posts and the research I work on. The aim of the post is to introduce you to generative modeling and some of its terminology. Future posts will deepen on how to learn and use these models.
 ---
 ## Two probability equations
 In this tutorial, we are going to use two probability equations that are widely used in generative models: the Bayes theorem and the marginalization rule. Let's begin with the Bayes theorem:
@@ -25,13 +25,15 @@ $$
 \qquad \text{Marginalization in discrete and continuous variables}
 $$
 
+These equations give us the probability distribution of $$x$$ regardless of the values that $$y$$ takes. This, in connection with Bayes theorem, allows us to compute conditional distributions from joint distributions.
+
 ## Definition
 
 Generative models are a class of models that aim to infer the distribution of the data across *all* of it's dimensions. Mathematically, if we have a set $$\{x_{i}\}_{i\in m}$$ where $$x_{i} \in \mathbb{R}^{D}$$, and $$m$$ corresponds to the number of observations, the generative model aims to find the joint distribution $$p(\mathbf{x})$$ (or $$p(y, \mathbf{x}$$) if we have labels in our data). This is different from discriminative models which aim to model *conditional* distributions of variables: $$p(y \lvert \mathbf{x})$$. Since the aim of generative models is to represent a distribution, this places them in the family of probabilistic or Bayesian methods.
 
 ## What are these models used for?
 
-Generative models are used for different tasks but, compared to discriminative models, they can perform *density estimation*. This means they can return a likelihood value of your data points under your model. A direct application of density estimation is anomaly detection: given a probability distribution $$p(\mathbf{x})$$ how likely is a point $$x$$ to happen?
+Generative models are used for different tasks but, compared to discriminative models, they can perform <a href="https://en.wikipedia.org/wiki/Density_estimation" target="_blank"><em>density estimation</em></a>. This means they can return a likelihood value of your data points under your model. A direct application of density estimation is anomaly detection: given a probability distribution $$p(\mathbf{x})$$ how likely is a point $$x$$ to happen?
 
 After modeling the probability distribution, a second major task that generative models can perform is synthetic data *generation*. This means, generating data that resembles (and potentially has the same properties) the data used to train the model. Hence the name "Generative" models. Data generation is, for example, widely used in image synthesis which is essential to make realistic computer games.
 
@@ -44,7 +46,9 @@ After modeling the probability distribution, a second major task that generative
 
  Other tasks, such as providing a label or an estimate of a variable $$\hat{y}$$ like in discriminative models, can be done through the Bayes theorem and marginalization.
 
- Generative models are extremely useful to do machine learning without knowledge of specific algorithms, the context in which they are used and the assumptions they make. In contrast, generative modeling is the building block of *model based machine learning* which "only" requires knowledge of probability. Common methods in machine learning and statistics can be represented as generative models given a probabilistic approach. To name a few, Principal Component Analysis (PCA), Linear Regression and even the Kalman Filter! 
+ Generative models are extremely useful to do machine learning without knowledge of specific algorithms, the context in which they are used and the assumptions they make. In contrast, generative modeling is the building block of *model based machine learning* which "only" requires knowledge of probability. Common methods in machine learning and statistics can be represented as generative models given a probabilistic approach. To name a few, <a href="http://www.robots.ox.ac.uk/~cvrg/hilary2006/ppca.pdf" target="_blank">Principal Component Analysis (PCA)</a>, Linear Regression and even the <a href="http://http://mlg.eng.cam.ac.uk/zoubin/papers/vietri.pdf" target="_blank">Kalman Filter!</a>
+
+ Generative models can also be useful to disentangle causality. In fact, Pearl's approach to causality is based on them. For studying extensively generative models and causality, Pearl earned the Turing award in 2011.
 
 ## How to build your own generative model?
 
@@ -59,7 +63,7 @@ There are three common ways to represent generative models: Directed graphs, und
 
 In their basic form, directed graphs are composed of nodes and directed edges. The nodes represent either random variables or parameters. The edges represent a conditioning relation between two variables. If one variable (a parent) has an edge pointing to another variable (a child) then the probability of the child depends on the value that the parent variable takes. Note that the type of directed graphs we use in generative models is a subset which are called Directed Acyclical Graphs (DAG) which means that there are not any cycles in the proposed graph structure. (Remember we were talking about representation power before? well, this condition might be a limitant of directed graphs)
 
-Let's do a basic example to check how these concepts work. Suppose you want to model an outcome variable $x$ of two individuals. You believe that there are two factors that influence $$x$$: $$\beta$$ which influences both individuals in the same way and $$z_{i}$$ which is specific to each individual. $$\alpha$$ represent some fixed parameter which influences the distribution of $$\beta$$. The latent variable $$\beta$$ would be called a global variable and the latent variable $$z$$ would be called local variable. This simple graphical model can be represented in the following way:
+Let's do a basic example to check how these concepts work. Suppose you want to model an outcome variable $$x$$ of two individuals. You believe that there are two factors that influence $$x$$: $$\beta$$ which influences both individuals in the same way and $$z_{i}$$ which is specific to each individual. $$\alpha$$ represent some fixed parameter which influences the distribution of $$\beta$$. The latent variable $$\beta$$ would be called a global variable and the latent variable $$z$$ would be called local variable. This simple graphical model can be represented in the following way:
 
 <div class="blogViewImg">
   <figure>
@@ -80,7 +84,7 @@ Both of these images represent the same model. However, the left introduces the 
 
 ## Back to generative models and generative processes
 
-We have been worrying about how to build generative models and how to represent them with graphs, but we have forgotten that they also represent a probability distribution. Mathematically, this graph represents an equation:
+We have been worrying about how to build generative models and how to represent them with graphs, but we have forgotten that they also represent a probability distribution. Mathematically, the graph introduced in the last section represents an equation:
 
 $$
 p(\mathbf{x}, \mathbf{z}, \beta \lvert \alpha) = p(\beta \lvert \alpha)\prod_{i=1}^{M=2}p(z_{i} \lvert \beta)p(x_{i} \lvert z_{i}, \beta)
@@ -96,6 +100,7 @@ for i in (M=2):
 	z_i = poisson_random(rate=beta)
 	x_i = normal_random(mean=z_i, variance=beta)
 ```
+
 Just as with the joint probability, this "generative story" is the one that allows us to do synthetic data generation. This synthetic data generation also allows us to check whether our model is correct or not. If we can synthesize data that resembles the observed data, then we are on a good way.
 
 ## How to learn with these models?
@@ -108,11 +113,14 @@ This blog post is the first of a series of posts on Bayesian learning. Even thou
 
 ### REFERENCES
 <ol class="bibliography"><li><span id="goodfellow_dl_2016">Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <i>Deep Learning</i>. MIT Press. Retrieved from <a href="http://www.deeplearningbook.org" target="_blank">link</a></span></li>
-<li><span id="bishop_mbml_2012">Bishop, C. M. (2012). Model-based machine learning. <i>Philosophical Transactions of the Royal Society A: Mathematical,  Physical and Engineering Sciences</i>, <i>371</i>(1984). Retrieved from <a href="http://www.deeplearningbook.org" target="_blank">link</a></span></li>
+<li><span id="winn_mbmlb_2015">Bishop, C., Winn, J., &amp; Diethe, T. (2015). <i>Model-Based Machine Learning</i>. Retrieved from <a href="http://www.mbmlbook.com/index.htmlg" target="_blank">link</a></span></li>
 <li><span id="adams_mlss_2018">Adams, R. (2018). A Tutorial on Deep Probabilistic Generative Models. Machine Learning Summer School. Retrieved from <a href="http://mlss2018.net.ar/slides/Adams-1.pdf" target="_blank">link</a></span></li>
 <li><span id="pereira_mbml_2019">Pereira, F., &amp; Rodrigues, F. (2019). Model Based Machine Learning. Danmarks Tekniske Universitet. Retrieved from <a href="https://github.com/Chechgm/42186-model-based-machine-learning" target="_blank">(Unofficial) repo link</a></span></li>
 <li><span id="zhang_variational_2017">Advances in Variational Inference. (2017). <i>ArXiv e-Prints</i>, arXiv:1711.05597. Retrieved from <a href="https://arxiv.org/pdf/1711.05597.pdf" target="_blank">link</a></span></li>
-<li><span id="brock_biggan_2018">Brock, A., Donahue, J., &amp; Simonyan, K. (2018). Large Scale GAN Training for High Fidelity Natural Image Synthesis. <i>ArXiv e-Prints</i>, arXiv:1809.11096. Retrieved from <a href="https://arxiv.org/pdf/1809.11096.pdf" target="_blank">link</a></span></li></ol>
+<li><span id="brock_biggan_2018">Brock, A., Donahue, J., &amp; Simonyan, K. (2018). Large Scale GAN Training for High Fidelity Natural Image Synthesis. <i>ArXiv e-Prints</i>, arXiv:1809.11096. Retrieved from <a href="https://arxiv.org/pdf/1809.11096.pdf" target="_blank">link</a></span></li>
+<li><span id="tipping_ppca_1999">Tipping, M. E., &amp; Bishop, C. M. (1999). Probabilistic Principal Component Analysis. <i>JOURNAL OF THE ROYAL STATISTICAL SOCIETY, SERIES B</i>, <i>61</i>(3), 611–622. Retrieved from <a href="http://www.robots.ox.ac.uk/ cvrg/hilary2006/ppca.pdf" target="_blank">link</a></span></li>
+<li><span id="ghahramani_dbn_1998">Ghahramani, Z. (1998). Learning dynamic Bayesian networks. In <i>Adaptive Processing of Sequences and Data Structures</i> (pp. 168–197). Springer Berlin Heidelberg. Retrieved from <a href="http://mlg.eng.cam.ac.uk/zoubin/papers/vietri.pdf" target="_blank">link</a></span></li>
+<li><span id="hoffman_svi_2013">Hoffman, M. D., Blei, D. M., Wang, C., &amp; Paisley, J. (2013). Stochastic Variational Inference. <i>Journal of Machine Learning Research</i>, <i>14</i>, 1303–1347. Retrieved from <a href="http://jmlr.org/papers/volume14/hoffman13a/hoffman13a.pdf" target="_blank">link</a></span></li></ol>
 
 
 #### Thanks

@@ -34,6 +34,7 @@ I have always had a passion for mathematics. I have thought that if I had not do
 3. [x] Econometrics 2 (Universidad de los Andes)
 4. [x] Stochastic modelling (Prof. Nathan Ross, Melbourne University)
 5. [x] Advanced Econometrics (Microeconometrics, Universidad de los Andes)
+6. [x] Generalized Linear Models (Hebrew University of Jerusalem, audit)
 
 - ### Algebra track
 1. [x] Linear algebra (Universidad de los Andes).  I also recommend [the essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) as a mini course to get a lot of linear algebra intuition.

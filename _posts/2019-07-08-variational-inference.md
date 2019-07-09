@@ -50,7 +50,7 @@ $$
 = \mathbb{E}_{q_{\phi}(z)}[\log p(x, z)]-\mathbb{E}_{q_{\phi}(z)}[\log q_{\phi}(z)]
 $$
 
-First, let's note that the last equation The last equation is known as the Variational lower bound, the negative free energy $$-\mathcal{F}$$ or the Evidence Lower BOund (ELBO). As mentioned before, we want to maximize this (a lower bound on the evidence) to find the parameters of the distribution $$q_{\phi}(z)$$ that approximate the likelihood of our data best. The reason of why this is called Variational lower bound or Evidence Lower BOund is because, as mentioned before, the KL-divergence is always positive and thus always adds to the evidence of the data $$p(x)$$. Let's briefly analyze what the terms in the ELBO mean. The first term, the expected complete log-likelihood prefers that $$q_{\phi}$$ is on the Maximum A Posteriori (MAP) solution, meaning, placing the mass centered at one point while the second term, the negative entropy, encourages $$q_{\phi}$$ to be diffuse or, in other words, to capture the variance of the distribution.
+First, let's note that the last equation The last equation is known as the Variational lower bound, the negative free energy $$-\mathcal{F}$$ or the Evidence Lower BOund (ELBO, $$\mathcal{L}$$). As mentioned before, we want to maximize this (a lower bound on the evidence) to find the parameters of the distribution $$q_{\phi}(z)$$ that approximate the likelihood of our data best. The reason of why this is called Variational lower bound or Evidence Lower BOund is because, as mentioned before, the KL-divergence is always positive and thus always adds to the evidence of the data $$p(x)$$. Let's briefly analyze what the terms in the ELBO mean. The first term, the expected complete log-likelihood prefers that $$q_{\phi}$$ is on the Maximum A Posteriori (MAP) solution, meaning, placing the mass centered at one point while the second term, the negative entropy, encourages $$q_{\phi}$$ to be diffuse or, in other words, to capture the variance of the distribution.
 
 <div class="blogViewImg">
   <figure>
@@ -61,7 +61,7 @@ First, let's note that the last equation The last equation is known as the Varia
 
 We can see VI as a two step process. First we need to define an approximating distribution $$q_{\phi}(z)$$. Second, we need to find an appropriate optimization scheme to find the parameters $$\phi$$ that gives us the best ELBO.
 
-About the choice of the variational (approximating) distribution. We would like to choose a distribution which is, of course, easier to work with than the distribution we are trying to approximate (otherwise we would just do inference on the original one, right?). There are many ways to define the variational distribution and it is solely the choice of the researcher. There is a subtlety about choosing the distribution, though. It is necessary to define *all* the latent variables in the variational distribution, you will notice this whenever you are programming this in probabilistic programs that allow to define a variational distribution for your model (Edward, Pyro, etc.).
+About the choice of the variational (approximating) distribution. We would like to choose a distribution easier to work with than the distribution we are trying to approximate (otherwise we would just do inference on the original one, right?). There are many ways to define the variational distribution and it is ultimately the choice of the researcher. Note that when picking a variational family, we can represent the distribution in a graphical model just as in the previous post. In figure 3 we draw the graphical representation of an arbitrary variational distribution. There is a subtlety about choosing the distribution, though. It is necessary to define *all* the latent variables in the variational distribution, you will notice this whenever you are programming this in probabilistic programs that allow to define a variational distribution for your model (Edward, Pyro, etc.).
 
 Now, with respect to the optimization procedure, we know from optimization theory that the parameters that optimize a function are found when the gradient of the function with respect to the parameter we want to optimize equals zero. In our case:
 
@@ -75,6 +75,13 @@ During the first years of VI, the steps a researcher had to follow in order to d
 2. Computing $$\mathbb{E}_{q_{\phi}(z)}[\log p(x, z)]$$ and $$\mathbb{E}_{q_{\phi}(z)}[\log q_{\phi}(z)]$$, that is, writing explicitly the distribution of your model, taking a constant expected value of anything that is not defined by $$q_{\phi}(z)$$ and use $$q_{\phi}(z)$$ for all $$z$$. This step allowed researchers to build the ELBO.
 3. Take the gradient of the ELBO with respect to each $$\phi$$ and set it to zero to find the parameter updates they were going to use in their optimization algorithm.
 4. Use coordinate gradient ascent to optimize $$\phi$$.
+
+<div class="blogViewImg">
+  <figure>
+    <img src="{{ site.baseurl }}/assets/3_mean_field.png" alt="" />
+    <figcaption markdown="span">Example of a graph of a latent variable model (left) and graph of the inference model (right). The inference model is parametrized as a mean field variational family. This is, a distribution where each latent variable is independent of each other. The variational parameters are represented as white squares. Ideally, we would like the distribution on the right to approximate the distribution on the left under some divergence measure. A commonly used divergence is the Kullback-Leibler divergence. Adapted from: <a href="http://www.cs.columbia.edu/~blei/papers/Blei2014b.pdf" target="_blank">(Blei 2014)</a></figcaption>
+  </figure>
+</div>
 
 This process, even though mathematically elegant, was error prone and potentially prohibitevely expensive to compute in cases where there are local variables, global variables and several observed points. On top of that, this procedure imposed some restrictive conditions on the variational family that could be used in order to follow the steps. VI research put a strong focus for many years on how to make this process faster and less error prone. Before explaining this advances on this point I have to make a short explanation of something else.
 
@@ -188,7 +195,9 @@ This section is just a short summary of what we just learned in the previous sec
 In future posts, I will write about two subjects that I find interesting in Variational Inference. First, I want to explore the relation between variational inference and neural networks. Particularly I am going to be looking into the Variational Auto-Encoder and how to make richer variational families for more flexible models. In this matter, we will be looking into Normalizing Flows and Hierarchical Variational Inference.
 
 ### References
+{% bibliography %}
 <ol class="bibliography"><li><span id="bishop_2006_pattern">Bishop, C. M. (2006). <i>Pattern recognition and machine learning</i>. springer. Retrieved from <a href="http://jmlr.org/papers/volume14/hoffman13a/hoffman13a.pdf" target="_blank">link</a></span></li>
+<li><span id="blei_2014_build">Blei, D. M. (2014). Build, compute, critique, repeat: Data analysis with latent variable models. <i>Annual Review of Statistics and Its Application</i>, <i>1</i>, 203–232. Retrieved from <a href="http://www.cs.columbia.edu/~blei/papers/Blei2014b.pdf" target="_blank">link</a></span></li>
 <li><span id="blei_2016_variational">Blei, D., Ranganath, R., &amp; Mohamed, S. Variational Inference: Foundations and Modern Methods. Retrieved from <a href="https://media.nips.cc/Conferences/2016/Slides/6199-Slides.pdf" target="_blank">link</a></span></li>
 <li><span id="hoffman_svi_2013">Hoffman, M. D., Blei, D. M., Wang, C., &amp; Paisley, J. (2013). Stochastic Variational Inference. <i>Journal of Machine Learning Research</i>, <i>14</i>, 1303–1347. Retrieved from <a href="http://jmlr.org/papers/volume14/hoffman13a/hoffman13a.pdf" target="_blank">link</a></span></li>
 <li><span id="kingma_vae_2014">Kingma, D. P., &amp; Welling, M. (2014). Auto-Encoding Variational Bayes. In <i>2nd International Conference on Learning Representations, ICLR 2014, Banff, AB, Canada, April 14-16, 2014, Conference Track Proceedings</i>. Retrieved from http://arxiv.org/abs/1312.6114</span></li>

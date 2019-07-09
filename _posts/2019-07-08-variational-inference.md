@@ -195,7 +195,6 @@ This section is just a short summary of what we just learned in the previous sec
 In future posts, I will write about two subjects that I find interesting in Variational Inference. First, I want to explore the relation between variational inference and neural networks. Particularly I am going to be looking into the Variational Auto-Encoder and how to make richer variational families for more flexible models. In this matter, we will be looking into Normalizing Flows and Hierarchical Variational Inference.
 
 ### References
-{% bibliography %}
 <ol class="bibliography"><li><span id="bishop_2006_pattern">Bishop, C. M. (2006). <i>Pattern recognition and machine learning</i>. springer. Retrieved from <a href="http://jmlr.org/papers/volume14/hoffman13a/hoffman13a.pdf" target="_blank">link</a></span></li>
 <li><span id="blei_2014_build">Blei, D. M. (2014). Build, compute, critique, repeat: Data analysis with latent variable models. <i>Annual Review of Statistics and Its Application</i>, <i>1</i>, 203–232. Retrieved from <a href="http://www.cs.columbia.edu/~blei/papers/Blei2014b.pdf" target="_blank">link</a></span></li>
 <li><span id="blei_2016_variational">Blei, D., Ranganath, R., &amp; Mohamed, S. Variational Inference: Foundations and Modern Methods. Retrieved from <a href="https://media.nips.cc/Conferences/2016/Slides/6199-Slides.pdf" target="_blank">link</a></span></li>

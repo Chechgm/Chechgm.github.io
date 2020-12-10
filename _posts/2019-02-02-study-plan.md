@@ -3,6 +3,7 @@ layout: post
 title:  Study plan
 date: 08-02-2019
 img_link: /assets/1_golden_ratio.png
+published: false
 excerpt: This is a short study plan I have created (and studied with) for some years now. Even though I am interested in other subjects, it is heavily biased to maths and machine learning courses.
 ---
 
@@ -55,7 +56,7 @@ Even though you can consider econometrics as a branch of Machine Learning, I off
 5. [Advanced Machine Learning Specialization (HSE, Coursera)](https://www.coursera.org/specializations/aml)
 * [x] Introduction to deep learning
 * [x] Bayesian methods for machine learning
-* [on-going] How to win a data science competition: learn from top kagglers
+* [x] How to win a data science competition: learn from top kagglers
 * [ ] Practical Reinforcement learning
 * [ ] Deep learning in computer vision
 * [ ] Natural language processing
@@ -72,18 +73,26 @@ Even though you can consider econometrics as a branch of Machine Learning, I off
 
 ## Pilars of research
 On the machine learning part of the research I am doing during my PhD I am focusing on three major areas (of course this might change in the future): Deep Generative models, Probabilistic Graphical models and Causality. On these areas of studies I read mostly papers, however there are some books that I am planning to read which might be useful for a deeper understanding of these areas.
-* [ ] Pearl, J., 2000. Causality: Models, Reasoning, and Inference. Cambridge University Press, New York.
+* [x] Pearl, J., 2000. Causality: Models, Reasoning, and Inference. Cambridge University Press, New York.
 * [ ] Bishop C.M., 2006. Pattern Recognition and Machine Learning. Springer, Berlin
+* [x] McElrath, R. Statistical rethinking. 
+* [x] Gelman, A. et.al., 2006. Bayesian Data Analysis. 
+* [on-going] Berger, J. Statistical decision theory and Bayesian analysis.
 * [ ] Daphne Koller, Nir Friedman, 2009. Probabilistic Graphical Models: Principles and Techniques - Adaptive Computation and Machine Learning. The MIT Press
 
 ## Various
 Besides my interest in maths and machine learning, I am interested in other things. Some of the courses I would like to do during my life are these:
 
-### Languages:
+### Language:
 1. [x] Duolingo French
 2. [x] Duolingo Hebrew
 3. [x] Duolingo Danish
 4. [ ] Duolingo German
+
+### Cognitive science, philosophy of mind, and linguistics:
+1. [] Searle's course on philosophy of mind.
+2. [x] Computational cognitive science (Joshua Tenenbaum, MIT)
+3. [] Computational psycholinguistics (Roger Levy, MIT)
 
 ### Music:
 1. [ ] [Jazz improvisation (Berklee, Coursera)](https://www.coursera.org/learn/jazz-improvisation)
